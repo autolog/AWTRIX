@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<Devices>
+    <!-- AWTRIX Coordinator - manages MQTT broker connection -->
+    <Device id="awtrixCoordinator" type="custom">
+        <Name>AWTRIX Coordinator</Name>
+        <ConfigUI>
+            <Template file="Templates/template_awtrix_coordinator.xml" />
+		</ConfigUI>
+        <States>
+            <State id="status">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Connection Status changed</TriggerLabel>
+                <ControlPageLabel>Status</ControlPageLabel>
+            </State>
+        </States>
+        <UiDisplayStateId>status</UiDisplayStateId>
+	</Device>
+
+    <!-- AWTRIX Clock - represents a physical AWTRIX device -->
+	<Device id="awtrixClock" type="dimmer">
+        <Name>AWTRIX Clock</Name>
+        <ConfigUI>
+            <Template file="Templates/template_awtrix_clock.xml" />
+		</ConfigUI>
+        <States>
+            <!-- Connection -->
+            <State id="status">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Status changed</TriggerLabel>
+                <ControlPageLabel>Status</ControlPageLabel>
+            </State>
+
+            <!-- Hardware Stats -->
+            <State id="battery">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Battery Level changed</TriggerLabel>
+                <ControlPageLabel>Battery</ControlPageLabel>
+            </State>
+            <State id="batteryRaw">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Battery Raw changed</TriggerLabel>
+                <ControlPageLabel>Battery Raw</ControlPageLabel>
+            </State>
+            <State id="temperature">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Temperature changed</TriggerLabel>
+                <ControlPageLabel>Temperature</ControlPageLabel>
+            </State>
+            <State id="humidity">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Humidity changed</TriggerLabel>
+                <ControlPageLabel>Humidity</ControlPageLabel>
+            </State>
+            <State id="luxSensorEnabled">
+                <ValueType>Boolean</ValueType>
+                <TriggerLabel>Light Sensor Enabled changed</TriggerLabel>
+                <ControlPageLabel>Light Sensor</ControlPageLabel>
+            </State>
+            <State id="ldrRaw">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>LDR Raw changed</TriggerLabel>
+                <ControlPageLabel>LDR Raw</ControlPageLabel>
+            </State>
+            <State id="wifiSignal">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>WiFi Signal changed</TriggerLabel>
+                <ControlPageLabel>WiFi Signal</ControlPageLabel>
+            </State>
+            <State id="freeRam">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Free RAM changed</TriggerLabel>
+                <ControlPageLabel>Free RAM</ControlPageLabel>
+            </State>
+            <State id="uptime">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Uptime changed</TriggerLabel>
+                <ControlPageLabel>Uptime</ControlPageLabel>
+            </State>
+            <State id="firmwareVersion">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Firmware Version changed</TriggerLabel>
+                <ControlPageLabel>Firmware</ControlPageLabel>
+            </State>
+            <State id="uid">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Device UID changed</TriggerLabel>
+                <ControlPageLabel>UID</ControlPageLabel>
+            </State>
+            <State id="currentApp">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Current App changed</TriggerLabel>
+                <ControlPageLabel>Current App</ControlPageLabel>
+            </State>
+            <State id="messageCount">
+                <ValueType>Number</ValueType>
+                <TriggerLabel>Message Count changed</TriggerLabel>
+                <ControlPageLabel>Messages</ControlPageLabel>
+            </State>
+
+            <!-- Monitoring -->
+            <State id="lastStatsTime">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Last Stats Time changed</TriggerLabel>
+                <ControlPageLabel>Last Stats</ControlPageLabel>
+            </State>
+            <State id="lastButtonPress">
+                <ValueType>String</ValueType>
+                <TriggerLabel>Button Press changed</TriggerLabel>
+                <ControlPageLabel>Last Button</ControlPageLabel>
+            </State>
+
+            <!-- Indicators -->
+            <State id="indicator1Active">
+                <ValueType>Boolean</ValueType>
+                <TriggerLabel>Indicator 1 changed</TriggerLabel>
+                <ControlPageLabel>Indicator 1</ControlPageLabel>
+            </State>
+            <State id="indicator2Active">
+                <ValueType>Boolean</ValueType>
+                <TriggerLabel>Indicator 2 changed</TriggerLabel>
+                <ControlPageLabel>Indicator 2</ControlPageLabel>
+            </State>
+            <State id="indicator3Active">
+                <ValueType>Boolean</ValueType>
+                <TriggerLabel>Indicator 3 changed</TriggerLabel>
+                <ControlPageLabel>Indicator 3</ControlPageLabel>
+            </State>
+        </States>
+        <UiDisplayStateId>status</UiDisplayStateId>
+	</Device>
+</Devices>

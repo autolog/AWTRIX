@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<PluginConfig>
+    <SupportURL>https://github.com/Blueforcer/awtrix3</SupportURL>
+    <Field id="description" type="label">
+        <Label>This Plugin controls AWTRIX 3 LED matrix clocks (e.g. Ulanzi TC001) via MQTT.</Label>
+    </Field>
+    <Field id="copyright" type="label">
+        <Label>Copyright © 2026 Autolog</Label>
+    </Field>
+
+	<Field id="space-0" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+	<Field id="separator-1" type="separator" alwaysUseInDialogHeightCalc="true"/>
+	<Field id="header-1" type="label" alwaysUseInDialogHeightCalc="true" fontColor="green">
+        <Label>PLUGIN / INDIGO EVENT LOG LOGGING</Label>
+    </Field>
+
+	<Field id="space-1" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+	<Field id="eventLogLevel" type="menu" defaultValue="20" alwaysUseInDialogHeightCalc="true">
+		<Label>Logging Level - Indigo Event Log:</Label>
+		<List>
+			<Option value="10">MQTT Topic Logging Messages</Option>
+			<Option value="20">Informational Messages</Option>
+			<Option value="30">Warning Messages</Option>
+			<Option value="40">Error Messages</Option>
+			<Option value="50">Critical Errors Only</Option>
+		</List>
+	</Field>
+
+	<Field id="pluginLogLevel" type="menu" defaultValue="20" alwaysUseInDialogHeightCalc="true">
+		<Label>Logging Level - Plugin Event Log:</Label>
+		<List>
+			<Option value="10">MQTT Topic Logging Messages</Option>
+			<Option value="20">Informational Messages</Option>
+			<Option value="30">Warning Messages</Option>
+			<Option value="40">Error Messages</Option>
+			<Option value="50">Critical Errors Only</Option>
+		</List>
+	</Field>
+
+	<Field id="space-2" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+	<Field id="developmentDebug" type="checkbox" defaultValue="false">
+        <Label>Development Debug:</Label>
+        <Description>Turn on development debug</Description>
+    </Field>
+
+	<Field id="space-3" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="separator-2" type="separator" alwaysUseInDialogHeightCalc="true"/>
+
+</PluginConfig>

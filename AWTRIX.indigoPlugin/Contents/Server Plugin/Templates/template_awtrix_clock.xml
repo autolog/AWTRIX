@@ -1,0 +1,47 @@
+<Template>
+    <Field id="header-coordinator" type="label" alwaysUseInDialogHeightCalc="true" fontColor="green">
+        <Label>AWTRIX COORDINATOR</Label>
+    </Field>
+
+    <Field id="space-coord-1" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="awtrix_coordinator_dev_id" type="menu" alwaysUseInDialogHeightCalc="true">
+        <Label>AWTRIX Coordinator:</Label>
+        <List class="self" filter="self.awtrixCoordinator" method="get_coordinator_list" dynamicReload="true"/>
+    </Field>
+    <Field id="help-coordinator" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray" alwaysUseInDialogHeightCalc="true">
+        <Label>Select the AWTRIX Coordinator that manages the MQTT connection for this clock.</Label>
+    </Field>
+
+    <Field id="space-coord-2" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="separator-topic" type="separator" alwaysUseInDialogHeightCalc="true"/>
+    <Field id="header-topic" type="label" alwaysUseInDialogHeightCalc="true" fontColor="green">
+        <Label>AWTRIX DEVICE</Label>
+    </Field>
+
+    <Field id="space-topic-1" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="awtrix_prefix" type="textfield" defaultValue="" alwaysUseInDialogHeightCalc="true">
+        <Label>AWTRIX MQTT Prefix:</Label>
+    </Field>
+    <Field id="help-prefix" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray" alwaysUseInDialogHeightCalc="true">
+        <Label>The MQTT prefix configured on your AWTRIX device (e.g. awtrix_XXXXXX). Found in the AWTRIX web interface under MQTT settings.</Label>
+    </Field>
+
+    <Field id="space-topic-2" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="separator-settings" type="separator" alwaysUseInDialogHeightCalc="true"/>
+    <Field id="header-settings" type="label" alwaysUseInDialogHeightCalc="true" fontColor="green">
+        <Label>SETTINGS</Label>
+    </Field>
+
+    <Field id="space-settings-1" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+
+    <Field id="enableMqttTopicLogging" type="checkbox" defaultValue="false" alwaysUseInDialogHeightCalc="true">
+        <Label>Log MQTT Topics:</Label>
+        <Description>Log all MQTT messages for debugging</Description>
+    </Field>
+
+    <Field id="space-settings-2" type="label" alwaysUseInDialogHeightCalc="true"><Label/></Field>
+</Template>

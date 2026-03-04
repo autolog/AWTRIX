@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<Actions>
+    <!-- Send Notification -->
+    <Action id="sendNotification" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Send Notification</Name>
+        <CallbackMethod>action_send_notification</CallbackMethod>
+        <ConfigUI>
+            <Field id="text" type="textfield">
+                <Label>Text:</Label>
+            </Field>
+            <Field id="icon" type="textfield" defaultValue="">
+                <Label>Icon (ID or filename):</Label>
+            </Field>
+            <Field id="color" type="textfield" defaultValue="">
+                <Label>Color (hex e.g. #FF0000):</Label>
+            </Field>
+            <Field id="duration" type="textfield" defaultValue="5">
+                <Label>Duration (seconds):</Label>
+            </Field>
+            <Field id="sound" type="textfield" defaultValue="">
+                <Label>Sound (RTTTL filename):</Label>
+            </Field>
+            <Field id="hold" type="checkbox" defaultValue="false">
+                <Label>Hold until dismissed:</Label>
+            </Field>
+            <Field id="rainbow" type="checkbox" defaultValue="false">
+                <Label>Rainbow effect:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Dismiss Notification -->
+    <Action id="dismissNotification" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Dismiss Notification</Name>
+        <CallbackMethod>action_dismiss_notification</CallbackMethod>
+    </Action>
+
+    <!-- Navigate App -->
+    <Action id="navigateApp" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Navigate App</Name>
+        <CallbackMethod>action_navigate_app</CallbackMethod>
+        <ConfigUI>
+            <Field id="direction" type="menu" defaultValue="next">
+                <Label>Direction:</Label>
+                <List>
+                    <Option value="next">Next App</Option>
+                    <Option value="previous">Previous App</Option>
+                </List>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Update Custom App -->
+    <Action id="updateCustomApp" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Update Custom App</Name>
+        <CallbackMethod>action_update_custom_app</CallbackMethod>
+        <ConfigUI>
+            <Field id="appName" type="textfield">
+                <Label>App Name:</Label>
+            </Field>
+            <Field id="help-appname" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Unique name for this app (no spaces). Used to update or remove it later.</Label>
+            </Field>
+            <Field id="text" type="textfield" defaultValue="">
+                <Label>Text:</Label>
+            </Field>
+            <Field id="icon" type="textfield" defaultValue="">
+                <Label>Icon (ID or filename):</Label>
+            </Field>
+            <Field id="color" type="textfield" defaultValue="">
+                <Label>Color (hex e.g. #FF0000):</Label>
+            </Field>
+            <Field id="duration" type="textfield" defaultValue="">
+                <Label>Duration (seconds):</Label>
+            </Field>
+            <Field id="lifetime" type="textfield" defaultValue="0">
+                <Label>Lifetime (0 = infinite):</Label>
+            </Field>
+            <Field id="help-lifetime" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Auto-remove app after this many seconds without update. 0 = never remove.</Label>
+            </Field>
+            <Field id="rainbow" type="checkbox" defaultValue="false">
+                <Label>Rainbow effect:</Label>
+            </Field>
+            <Field id="noScroll" type="checkbox" defaultValue="false">
+                <Label>Disable scrolling:</Label>
+            </Field>
+            <Field id="progress" type="textfield" defaultValue="-1">
+                <Label>Progress bar (0-100, -1 = off):</Label>
+            </Field>
+            <Field id="progressC" type="textfield" defaultValue="">
+                <Label>Progress bar color (hex):</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Remove Custom App -->
+    <Action id="removeCustomApp" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Remove Custom App</Name>
+        <CallbackMethod>action_remove_custom_app</CallbackMethod>
+        <ConfigUI>
+            <Field id="appName" type="textfield">
+                <Label>App Name:</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Set Indicator -->
+    <Action id="setIndicator" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Set Indicator</Name>
+        <CallbackMethod>action_set_indicator</CallbackMethod>
+        <ConfigUI>
+            <Field id="indicatorNumber" type="menu" defaultValue="1">
+                <Label>Indicator:</Label>
+                <List>
+                    <Option value="1">Indicator 1 (upper right)</Option>
+                    <Option value="2">Indicator 2 (right side)</Option>
+                    <Option value="3">Indicator 3 (lower right)</Option>
+                </List>
+            </Field>
+            <Field id="color" type="textfield" defaultValue="#FF0000">
+                <Label>Color (hex):</Label>
+            </Field>
+            <Field id="blink" type="textfield" defaultValue="0">
+                <Label>Blink interval (ms, 0 = off):</Label>
+            </Field>
+            <Field id="fade" type="textfield" defaultValue="0">
+                <Label>Fade interval (ms, 0 = off):</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Clear Indicator -->
+    <Action id="clearIndicator" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Clear Indicator</Name>
+        <CallbackMethod>action_clear_indicator</CallbackMethod>
+        <ConfigUI>
+            <Field id="indicatorNumber" type="menu" defaultValue="1">
+                <Label>Indicator:</Label>
+                <List>
+                    <Option value="1">Indicator 1 (upper right)</Option>
+                    <Option value="2">Indicator 2 (right side)</Option>
+                    <Option value="3">Indicator 3 (lower right)</Option>
+                </List>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Switch to App -->
+    <Action id="switchApp" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Switch to App</Name>
+        <CallbackMethod>action_switch_app</CallbackMethod>
+        <ConfigUI>
+            <Field id="appName" type="textfield">
+                <Label>App Name:</Label>
+            </Field>
+            <Field id="help-appname" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Built-in: Time, Date, Temperature, Humidity, Battery. Or use your custom app name.</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Play Sound -->
+    <Action id="playSound" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Play Sound</Name>
+        <CallbackMethod>action_play_sound</CallbackMethod>
+        <ConfigUI>
+            <Field id="soundType" type="menu" defaultValue="file">
+                <Label>Sound Type:</Label>
+                <List>
+                    <Option value="file">RTTTL Filename (from MELODIES folder)</Option>
+                    <Option value="rtttl">RTTTL String (inline)</Option>
+                </List>
+            </Field>
+            <Field id="sound" type="textfield">
+                <Label>Sound:</Label>
+            </Field>
+            <Field id="help-sound" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Filename without extension, or full RTTTL string depending on type selected above.</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Send Raw JSON -->
+    <Action id="sendRawJson" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Send Raw MQTT JSON</Name>
+        <CallbackMethod>action_send_raw_json</CallbackMethod>
+        <ConfigUI>
+            <Field id="topicSuffix" type="textfield">
+                <Label>Topic suffix:</Label>
+            </Field>
+            <Field id="help-topic" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Appended to AWTRIX prefix (e.g. settings, notify, custom/myapp, moodlight).</Label>
+            </Field>
+            <Field id="payload" type="textfield">
+                <Label>JSON Payload:</Label>
+            </Field>
+            <Field id="help-payload" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Valid JSON string. Leave empty for topics that require no payload.</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Set Mood Light -->
+    <Action id="setMoodLight" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Set Mood Light</Name>
+        <CallbackMethod>action_set_mood_light</CallbackMethod>
+        <ConfigUI>
+            <Field id="moodMode" type="menu" defaultValue="color">
+                <Label>Mode:</Label>
+                <List>
+                    <Option value="color">Color</Option>
+                    <Option value="kelvin">Color Temperature (Kelvin)</Option>
+                    <Option value="off">Disable Mood Light</Option>
+                </List>
+            </Field>
+            <Field id="brightness" type="textfield" defaultValue="170"
+                   visibleBindingId="moodMode" visibleBindingValue="color,kelvin">
+                <Label>Brightness (0-255):</Label>
+            </Field>
+            <Field id="moodColor" type="textfield" defaultValue="#FFFFFF"
+                   visibleBindingId="moodMode" visibleBindingValue="color">
+                <Label>Color (hex e.g. #FF00FF):</Label>
+            </Field>
+            <Field id="kelvin" type="textfield" defaultValue="2300"
+                   visibleBindingId="moodMode" visibleBindingValue="kelvin">
+                <Label>Color Temperature (Kelvin):</Label>
+            </Field>
+            <Field id="help-kelvin" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray"
+                   visibleBindingId="moodMode" visibleBindingValue="kelvin">
+                <Label>Typical range: 1000 (warm) to 6500 (cool daylight).</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Update Settings -->
+    <Action id="updateSettings" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Update Settings</Name>
+        <CallbackMethod>action_update_settings</CallbackMethod>
+        <ConfigUI>
+            <Field id="help-settings" type="label" fontSize="small" fontColor="darkgray">
+                <Label>Leave fields empty or unchanged to skip them. Only changed settings will be sent.</Label>
+            </Field>
+            <Field id="separator-display" type="separator"/>
+            <Field id="header-display" type="label" fontColor="green">
+                <Label>DISPLAY</Label>
+            </Field>
+            <Field id="ATIME" type="textfield" defaultValue="">
+                <Label>App Duration (seconds):</Label>
+            </Field>
+            <Field id="ATRANS" type="menu" defaultValue="unchanged">
+                <Label>Auto App Switching:</Label>
+                <List>
+                    <Option value="unchanged">-- No Change --</Option>
+                    <Option value="true">Enabled</Option>
+                    <Option value="false">Disabled</Option>
+                </List>
+            </Field>
+            <Field id="TEFF" type="menu" defaultValue="unchanged">
+                <Label>Transition Effect:</Label>
+                <List>
+                    <Option value="unchanged">-- No Change --</Option>
+                    <Option value="0">Random</Option>
+                    <Option value="1">Slide</Option>
+                    <Option value="2">Dim</Option>
+                    <Option value="3">Zoom</Option>
+                    <Option value="4">Rotate</Option>
+                    <Option value="5">Pixelate</Option>
+                    <Option value="6">Curtain</Option>
+                    <Option value="7">Ripple</Option>
+                    <Option value="8">Blink</Option>
+                    <Option value="9">Reload</Option>
+                    <Option value="10">Fade</Option>
+                </List>
+            </Field>
+            <Field id="TSPEED" type="textfield" defaultValue="">
+                <Label>Transition Speed (ms):</Label>
+            </Field>
+            <Field id="SSPEED" type="textfield" defaultValue="">
+                <Label>Scroll Speed (%):</Label>
+            </Field>
+            <Field id="separator-text" type="separator"/>
+            <Field id="header-text" type="label" fontColor="green">
+                <Label>TEXT</Label>
+            </Field>
+            <Field id="TCOL" type="textfield" defaultValue="">
+                <Label>Global Text Color (hex):</Label>
+            </Field>
+            <Field id="UPPERCASE" type="menu" defaultValue="unchanged">
+                <Label>Force Uppercase:</Label>
+                <List>
+                    <Option value="unchanged">-- No Change --</Option>
+                    <Option value="true">Enabled</Option>
+                    <Option value="false">Disabled</Option>
+                </List>
+            </Field>
+            <Field id="separator-general" type="separator"/>
+            <Field id="header-general" type="label" fontColor="green">
+                <Label>GENERAL</Label>
+            </Field>
+            <Field id="ABRI" type="menu" defaultValue="unchanged">
+                <Label>Auto Brightness:</Label>
+                <List>
+                    <Option value="unchanged">-- No Change --</Option>
+                    <Option value="true">Enabled</Option>
+                    <Option value="false">Disabled</Option>
+                </List>
+            </Field>
+            <Field id="CEL" type="menu" defaultValue="unchanged">
+                <Label>Temperature Unit:</Label>
+                <List>
+                    <Option value="unchanged">-- No Change --</Option>
+                    <Option value="true">Celsius</Option>
+                    <Option value="false">Fahrenheit</Option>
+                </List>
+            </Field>
+            <Field id="VOL" type="textfield" defaultValue="">
+                <Label>Volume (0-30):</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Sleep -->
+    <Action id="sleepDevice" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Sleep</Name>
+        <CallbackMethod>action_sleep</CallbackMethod>
+        <ConfigUI>
+            <Field id="sleepSeconds" type="textfield" defaultValue="3600">
+                <Label>Sleep Duration (seconds):</Label>
+            </Field>
+            <Field id="help-sleep" type="label" alignWithControl="true" fontSize="small" fontColor="darkgray">
+                <Label>Device will auto-wake after this duration. Can also be woken by pressing the middle button. Use Turn Off action for indefinite power off.</Label>
+            </Field>
+        </ConfigUI>
+    </Action>
+
+    <!-- Reboot Device -->
+    <Action id="rebootDevice" deviceFilter="self.awtrixClock" uiPath="DeviceActions">
+        <Name>Reboot Device</Name>
+        <CallbackMethod>action_reboot</CallbackMethod>
+    </Action>
+</Actions>
